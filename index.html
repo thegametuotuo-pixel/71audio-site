@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>71 Audio – Free hand-drawn VST3 &amp; AU plugins</title>
+<meta name="google-site-verification" content="_DspI-UQOEU2_sK62KFN5R4vz8cv45cXdMVJdbVt-Bk">
+<meta name="description" content="12 free audio plugins for Mac and Windows in one installer: Phone Bass (hear your 808 on a phone), Vampire stereo imager, FilterVerb shimmer, Riser, Destructor distortion, Stutter, Crash Delay, Trap Trasher, Cut Destroy, Cut Destroy Halloween, ReversVerb (reverse reverb) and 71 Rack. VST3 and AU, made by producer Matthieu Tosi in Paris.">
+<meta name="keywords" content="phone bass plugin, 808 on phone, bass enhancer, free vst plugins, free vst3, free au plugins, stereo imager, distortion plugin, riser plugin, stutter plugin, delay plugin, shimmer reverb, music production">
+<link rel="canonical" href="https://thegametuotuo-pixel.github.io/71audio-site/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="71 Audio – Free hand-drawn plugins">
+<meta property="og:description" content="Phone Bass and six more monsters, one big knob each. Free VST3/AU plugins for Mac and Windows.">
+<meta property="og:url" content="https://thegametuotuo-pixel.github.io/71audio-site/">
+<meta property="og:image" content="https://thegametuotuo-pixel.github.io/71audio-site/img/Destructor.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"71 Audio","url":"https://thegametuotuo-pixel.github.io/71audio-site/","founder":{"@type":"Person","name":"Matthieu Tosi","sameAs":"https://www.instagram.com/matthieu_tosi/"},"sameAs":["https://www.instagram.com/71audio/"]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&family=Gochi+Hand&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+/* Layout: a sketchbook page. Ink frames like the plugin faceplates, red marker for the one loud thing per section. Single paper theme by choice. */
+:root {
+  --paper: #f3ecdc;
+  --paper-deep: #e9e0cb;
+  --ink: #161310;
+  --ink-soft: #4f473d;
+  --red: #d9141a;
+  --red-dark: #a10e12;
+  --rule: rgba(22, 19, 16, .18);
+  --f-drip: "Rubik Wet Paint", "Impact", "Haettenschweiler", sans-serif;
+  --f-hand: "Gochi Hand", "Comic Sans MS", "Chalkboard SE", cursive;
+  --f-body: "Atkinson Hyperlegible", "Helvetica Neue", Arial, sans-serif;
+  --wobble: 255px 14px 225px 14px / 14px 225px 14px 255px;
+  --wobble-2: 14px 225px 14px 255px / 255px 14px 225px 14px;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 17px/1.6 var(--f-body);
+  padding-inline: 20px;
+  background-image:
+    radial-gradient(rgba(22,19,16,.035) 1px, transparent 1px),
+    radial-gradient(rgba(22,19,16,.025) 1px, transparent 1px);
+  background-size: 7px 7px, 11px 11px;
+  background-position: 0 0, 3px 5px;
+}
+.wrap { max-width: 1120px; margin-inline: auto; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
+h1, h2, h3 { text-wrap: balance; margin: 0; font-weight: 400; }
+p { margin: 0; }
+
+/* ---------- nav ---------- */
+.nav {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding-block: 18px; border-bottom: 2px solid var(--ink);
+  flex-wrap: wrap;
+}
+.logo { display: flex; align-items: baseline; gap: 8px; text-decoration: none; }
+.logo b { font: 400 40px/1 var(--f-drip); color: var(--red); }
+.logo span { font: 400 22px/1 var(--f-hand); letter-spacing: .06em; }
+.nav ul { list-style: none; display: flex; gap: 22px; margin: 0; padding: 0; flex-wrap: wrap; }
+.nav ul a { font: 400 21px/1 var(--f-hand); text-decoration: none; }
+.nav ul a:hover { color: var(--red); text-decoration: underline wavy var(--red) 1.5px; text-underline-offset: 5px; }
+
+/* ---------- hero ---------- */
+.hero {
+  display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: 40px; align-items: center; padding-block: 56px 48px;
+}
+.eyebrow { font: 400 22px/1.2 var(--f-hand); color: var(--ink-soft); }
+.hero h1 {
+  font: 400 clamp(64px, 11vw, 148px)/.9 var(--f-drip);
+  color: var(--red); margin-block: 10px 18px; letter-spacing: .01em;
+}
+.hero h1 .l { display: inline-block; transition: transform .08s linear; }
+.hero .lede { font-size: 20px; max-width: 34ch; }
+.hero .lede em { font-style: normal; font-family: var(--f-hand); font-size: 1.25em; color: var(--red); }
+.ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 26px; }
+.btn {
+  font: 400 22px/1 var(--f-hand); text-decoration: none; padding: 13px 22px 11px;
+  border: 2.5px solid var(--ink); border-radius: var(--wobble); background: var(--paper);
+  transition: transform .15s, box-shadow .15s;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.btn:hover { transform: translate(-2px, -2px) rotate(-1deg); box-shadow: 6px 6px 0 var(--ink); }
+.btn.red { background: var(--red); color: var(--paper); border-color: var(--ink); }
+
+.knobcard {
+  border: 3px solid var(--ink); border-radius: var(--wobble-2);
+  padding: 24px 20px 18px; text-align: center; background: var(--paper);
+  transform: rotate(1.2deg); position: relative;
+}
+.knobcard .tape {
+  position: absolute; top: -14px; left: 50%; width: 110px; height: 28px; margin-left: -55px;
+  background: rgba(217, 20, 26, .18); transform: rotate(-4deg);
+  border-left: 1px dashed rgba(22,19,16,.2); border-right: 1px dashed rgba(22,19,16,.2);
+}
+.knobcard h2 { font: 400 26px/1 var(--f-hand); letter-spacing: .08em; }
+#knob { width: min(260px, 100%); height: auto; touch-action: none; cursor: ns-resize; display: block; margin: 6px auto 0; }
+#knob:focus-visible { outline: none; }
+#knob:focus-visible .face { stroke: var(--red); }
+.knobcard .hint { font: 400 19px/1.3 var(--f-hand); color: var(--ink-soft); }
+.knobcard .read { font: 400 30px/1 var(--f-hand); color: var(--red); font-variant-numeric: tabular-nums; min-height: 32px; }
+
+/* ---------- featured: phone bass ---------- */
+.feat { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 44px; align-items: center; }
+.feat figure { margin: 0; border: 3.5px solid var(--ink); border-radius: var(--wobble-2); overflow: hidden; background: var(--paper-deep); transform: rotate(-1deg); box-shadow: 8px 8px 0 var(--ink); position: relative; }
+.feat figure img { display: block; width: 100%; height: auto; aspect-ratio: 2 / 1; }
+.feat .stamp { position: absolute; bottom: 14px; right: 14px; font: 400 20px/1 var(--f-hand); background: var(--red); color: var(--paper); border: 2.5px solid var(--ink); border-radius: var(--wobble); padding: 8px 12px 6px; transform: rotate(4deg); }
+.feat .kicker { font: 400 22px/1.2 var(--f-hand); color: var(--red); }
+.feat h2 { font: 400 clamp(52px, 8vw, 96px)/.95 var(--f-drip); color: var(--red); margin-block: 6px 14px; }
+.feat .big { font-size: 20px; }
+.feat ul.pts { margin: 18px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.feat ul.pts li { display: grid; grid-template-columns: 28px 1fr; gap: 8px; }
+.feat ul.pts li span { font: 400 24px/1 var(--f-hand); color: var(--red); }
+@media (max-width: 860px) { .feat { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---------- section heads ---------- */
+section { padding-block: 64px; border-top: 2px solid var(--ink); }
+.head { display: flex; justify-content: space-between; align-items: end; gap: 20px; flex-wrap: wrap; margin-bottom: 34px; }
+.head h2 { font: 400 clamp(44px, 6vw, 72px)/1 var(--f-drip); }
+.head h2 .r { color: var(--red); }
+.head p { max-width: 46ch; color: var(--ink-soft); }
+
+/* ---------- plugin cards ---------- */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 34px 30px; }
+.card {
+  min-width: 0; display: flex; flex-direction: column; gap: 12px;
+  transition: transform .2s;
+}
+.card:nth-child(odd) { transform: rotate(-.6deg); }
+.card:nth-child(even) { transform: rotate(.6deg); }
+.card:hover { transform: rotate(0) translateY(-4px); }
+.card figure { margin: 0; border: 3px solid var(--ink); border-radius: var(--wobble); overflow: hidden; background: var(--paper-deep); }
+.card img { display: block; width: 100%; height: auto; aspect-ratio: 2 / 1; object-fit: cover; }
+.card .top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.card h3 { font: 400 34px/1 var(--f-drip); color: var(--red); }
+.tag { font: 400 18px/1 var(--f-hand); border: 2px solid var(--ink); border-radius: 999px; padding: 5px 11px 3px; white-space: nowrap; }
+.card p { font-size: 16px; }
+.ctrls { display: flex; flex-wrap: wrap; gap: 6px 14px; padding: 0; margin: 0; list-style: none; font: 400 18px/1.2 var(--f-hand); color: var(--ink-soft); }
+.ctrls li::before { content: "◯ "; color: var(--red); font-size: .8em; }
+
+/* ---------- rack ---------- */
+.rack { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 44px; align-items: center; }
+.rack h3 { font: 400 30px/1.1 var(--f-hand); margin-bottom: 12px; }
+.rack ul.pts { margin: 18px 0 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+.rack ul.pts li { display: grid; grid-template-columns: 28px 1fr; gap: 8px; }
+.rack ul.pts li span { font: 400 24px/1 var(--f-hand); color: var(--red); }
+.rackbox { border: 3px solid var(--ink); border-radius: var(--wobble-2); padding: 18px; background: var(--paper); }
+.lfos { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
+.lfo { flex: 1 1 90px; border: 2px dashed var(--ink); border-radius: 10px; padding: 6px 10px; font: 400 18px/1.1 var(--f-hand); display: flex; align-items: center; gap: 8px; }
+.lfo svg { width: 46px; height: 18px; flex: none; }
+.slots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.slot {
+  border: 2.5px solid var(--ink); border-radius: var(--wobble); padding: 10px 10px 8px;
+  font: 400 19px/1.1 var(--f-hand); cursor: grab; user-select: none; background: var(--paper);
+  display: flex; justify-content: space-between; align-items: center; gap: 6px; min-height: 52px;
+  transition: transform .15s, background .15s;
+}
+.slot:hover { transform: rotate(-1.5deg); }
+.slot.on { background: var(--red); color: var(--paper); }
+.slot .pw { width: 14px; height: 14px; border-radius: 50%; border: 2px solid currentColor; flex: none; }
+.slot.on .pw { background: var(--paper); }
+.slot.dragging { opacity: .4; }
+.slot.over { outline: 3px dashed var(--red); outline-offset: 2px; }
+.rackbox .note { font: 400 17px/1.3 var(--f-hand); color: var(--ink-soft); margin-top: 12px; }
+
+/* ---------- vocal chain ---------- */
+.vc { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 44px; align-items: start; }
+.chain { display: flex; flex-wrap: wrap; gap: 10px 6px; align-items: center; margin-top: 4px; }
+.chain .m { font: 400 20px/1 var(--f-hand); border: 2px solid var(--ink); border-radius: var(--wobble); padding: 9px 12px 7px; background: var(--paper); }
+.chain .m.v { background: var(--ink); color: var(--paper); }
+.chain .ar { color: var(--red); font: 400 20px/1 var(--f-hand); }
+.legend { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 14px; font: 400 17px/1 var(--f-hand); color: var(--ink-soft); }
+.legend i { display: inline-block; width: 14px; height: 14px; border: 2px solid var(--ink); border-radius: 3px; vertical-align: -2px; margin-right: 6px; }
+.legend i.d { background: var(--ink); }
+.vox { margin-top: 26px; border-top: 2px dashed var(--rule); padding-top: 18px; }
+.vox h3 { font: 400 24px/1.1 var(--f-hand); margin-bottom: 10px; }
+.vox dl { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 6px 16px; margin: 0; font-size: 15.5px; }
+.vox dt { font: 400 19px/1.3 var(--f-hand); color: var(--red); }
+.vox dd { margin: 0; color: var(--ink-soft); }
+.price { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-top: 22px; }
+.price b { font: 400 64px/1 var(--f-drip); color: var(--red); }
+.price span { font: 400 21px/1.2 var(--f-hand); }
+
+/* ---------- specs ---------- */
+.specs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border: 3px solid var(--ink); border-radius: var(--wobble); }
+.spec { padding: 18px 20px; border-right: 2px solid var(--ink); min-width: 0; }
+.spec:last-child { border-right: 0; }
+.spec small { display: block; font: 400 17px/1 var(--f-hand); color: var(--ink-soft); letter-spacing: .05em; }
+.spec strong { display: block; font: 700 20px/1.3 var(--f-body); margin-top: 6px; }
+
+/* ---------- contact ---------- */
+.contact { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 40px; align-items: center; }
+.contact h2 { font: 400 clamp(44px, 6vw, 72px)/1 var(--f-drip); }
+.mail { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
+.mail code { font: 400 28px/1 var(--f-hand); color: var(--red); user-select: all; word-break: break-all; }
+.mail button { font: 400 19px/1 var(--f-hand); background: var(--paper); color: var(--ink); border: 2px solid var(--ink); border-radius: var(--wobble); padding: 8px 14px 6px; cursor: pointer; }
+.mail button:hover { background: var(--ink); color: var(--paper); }
+.sig { font: 400 24px/1.35 var(--f-hand); border-left: 3px solid var(--red); padding-left: 18px; }
+
+footer { border-top: 2px solid var(--ink); padding-block: 22px 40px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font: 400 18px/1.3 var(--f-hand); color: var(--ink-soft); }
+
+@media (max-width: 860px) {
+  .hero, .rack, .vc, .contact { grid-template-columns: minmax(0, 1fr); }
+  .specs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .spec:nth-child(2) { border-right: 0; }
+  .spec:nth-child(-n+2) { border-bottom: 2px solid var(--ink); }
+}
+@media (max-width: 480px) {
+  body { font-size: 16px; }
+  .grid { grid-template-columns: minmax(0, 1fr); }
+  .slots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .specs { grid-template-columns: minmax(0, 1fr); }
+  .spec { border-right: 0; border-bottom: 2px solid var(--ink); }
+  .spec:last-child { border-bottom: 0; }
+  .nav ul { gap: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card, .card:nth-child(odd), .card:nth-child(even), .btn, .slot { transition: none; }
+}
+
+/* ---------- free pack ---------- */
+.free { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 44px; align-items: start; }
+.specs.mini { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 22px; }
+.specs.mini .spec span { display: block; font-size: 14px; color: var(--ink-soft); margin-top: 2px; }
+.dls { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 10px; }
+.dls .btn { flex: 1 1 200px; text-align: center; }
+.specs.mini .spec { padding: 12px 14px; }
+.specs.mini .spec strong { font-size: 17px; }
+.note2 { margin-top: 14px; font: 400 18px/1.3 var(--f-hand); color: var(--ink-soft); }
+.gate { border: 3px solid var(--ink); border-radius: var(--wobble-2); padding: 24px; display: grid; gap: 22px; background: var(--paper); box-shadow: 6px 6px 0 var(--ink); }
+.step { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 14px; }
+.step .num { width: 38px; height: 38px; border: 2.5px solid var(--ink); border-radius: 50%; display: grid; place-items: center; font: 400 22px/1 var(--f-hand); }
+.step.ok .num { background: var(--red); color: var(--paper); border-color: var(--red); }
+.step.ok .num::after { content: "✓"; }
+.step.ok .num { font-size: 0; }
+.step.ok .num::after { font-size: 22px; }
+.step label { font: 400 23px/1.2 var(--f-hand); display: block; }
+.step .sub { font-size: 15px; color: var(--ink-soft); margin: 2px 0 10px; }
+.gate input[type=email] { width: 100%; font: 400 17px/1.2 var(--f-body); padding: 12px 14px; border: 2.5px solid var(--ink); border-radius: 10px; background: #fbf7ee; color: var(--ink); }
+.gate .err { color: var(--red-dark); font-size: 15px; margin-top: 6px; }
+.chk { display: flex !important; align-items: center; gap: 8px; margin-top: 12px; font: 400 19px/1.2 var(--f-hand) !important; cursor: pointer; }
+.chk input { width: 20px; height: 20px; accent-color: var(--red); }
+.btn.big { font-size: 26px; padding: 16px 22px 14px; width: 100%; cursor: pointer; }
+.btn:disabled { opacity: .35; cursor: not-allowed; transform: none; box-shadow: 4px 4px 0 var(--ink); }
+.btn.insta { display: inline-block; }
+.done { font: 400 20px/1.3 var(--f-hand); color: var(--ink); }
+.done a { color: var(--red); }
+.links { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 22px; }
+@media (max-width: 860px) { .free { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 480px) { .specs.mini { grid-template-columns: minmax(0, 1fr); } .specs.mini .spec { border-right: 0; } .gate { padding: 18px; } }
+</style>
+
+<div class="wrap">
+  <nav class="nav" aria-label="Main">
+    <a class="logo" href="#top"><b>71</b><span>AUDIO</span></a>
+    <ul>
+      <li><a href="#phonebass">Phone Bass</a></li>
+      <li><a href="#plugins">Plugins</a></li>
+      <li><a href="#rack">71 Rack</a></li>
+      <li><a href="#free">Free download</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero" id="top">
+    <div>
+      <p class="eyebrow">Audio plugins drawn by hand in Paris</p>
+      <h1 id="title" aria-label="71 Audio">71 Audio</h1>
+      <p class="lede">71 Audio is a small plugin label started by a music producer who got tired of menus. Every plugin begins as a pencil drawing, gets one big knob, and does one thing loudly. Twelve of them are <em>free</em> right now, in <em>one</em> download, including the new ReversVerb.</p>
+      <div class="ctas">
+        <a class="btn red" href="#free">Get all 12 plugins free</a>
+        <a class="btn" href="#plugins">See the plugins</a>
+      </div>
+    </div>
+    <div class="knobcard">
+      <div class="tape" aria-hidden="true"></div>
+      <h2>DESTROY</h2>
+      <svg id="knob" viewBox="0 0 240 230" role="slider" tabindex="0" aria-label="Destroy" aria-valuemin="0" aria-valuemax="100" aria-valuenow="20">
+        <g id="ticks" stroke="#161310" stroke-width="3" stroke-linecap="round"></g>
+        <path id="arcbg" fill="none" stroke="rgba(22,19,16,.12)" stroke-width="5" stroke-linecap="round"/>
+        <path id="arc" fill="none" stroke="#d9141a" stroke-width="5" stroke-linecap="round"/>
+        <circle class="face" cx="120" cy="118" r="70" fill="#f3ecdc" stroke="#161310" stroke-width="4.5"/>
+        <line id="ptr" x1="120" y1="118" x2="120" y2="62" stroke="#161310" stroke-width="9" stroke-linecap="round"/>
+        <text x="40" y="222" font-family="Gochi Hand, cursive" font-size="20" fill="#161310">0%</text>
+        <text x="166" y="222" font-family="Gochi Hand, cursive" font-size="20" fill="#161310">100%</text>
+      </svg>
+      <p class="read" id="read" aria-live="polite">20%</p>
+      <p class="hint">Drag it up. The title above will notice.</p>
+    </div>
+  </header>
+
+  <section id="phonebass">
+    <div class="feat">
+      <figure><img src="img/PhoneBass.jpg" alt="Phone Bass plugin interface, hand-drawn" width="900" height="450"><span class="stamp">New · Free</span></figure>
+      <div>
+        <p class="kicker">The one everybody asked for</p>
+        <h2>Phone Bass</h2>
+        <p class="big">Your 808 sounds huge in the studio and disappears on a phone. Phone Bass fixes that with one knob: it adds the harmonics a tiny speaker can play, so your sub is heard everywhere.</p>
+        <ul class="pts">
+          <li><span>◯</span><p>One knob. Turn it up until the bass shows up on a phone.</p></li>
+          <li><span>☎</span><p>PHONE TEST button: hear your mix through a phone speaker, then flip BYPASS to compare.</p></li>
+          <li><span>✓</span><p>Your original sub is never touched, and it never clips.</p></li>
+        </ul>
+        <div class="ctas">
+          <a class="btn red" href="#free">Get Phone Bass free</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="plugins">
+    <div class="head">
+      <h2>The 71 <span class="r">Series</span></h2>
+      <p>Each plugin started as a pencil drawing, and the drawing is the interface. One knob does the damage and a DRY/WET knob reins it in. <strong>One free download installs all of them</strong>, each one as its own plugin in your DAW.</p>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section id="rack">
+    <div class="rack">
+      <div>
+        <div class="head" style="margin-bottom:18px"><h2>71 <span class="r">Rack</span></h2></div>
+        <h3>The monsters in one chain.</h3>
+        <p class="note2" style="margin:0 0 12px">71 Rack is just one of the 12 plugins in the pack. You don't need it to use the others: every plugin also shows up on its own in your DAW.</p>
+        <p>Drop any module into six slots, reorder them by dragging, and let three tempo-locked LFOs move the knobs for you.</p>
+        <ul class="pts">
+          <li><span>~</span><p>Three LFOs synced to the song. Drag an LFO onto any knob, switch or slot mix to assign it.</p></li>
+          <li><span>⇄</span><p>Reorder the chain while it plays. Tails and live state move with the module, with no clicks.</p></li>
+          <li><span>◐</span><p>Every slot has its own power switch and mix knob.</p></li>
+        </ul>
+      </div>
+      <div class="rackbox">
+        <div class="lfos" aria-label="LFOs">
+          <div class="lfo"><svg viewBox="0 0 46 18"><path d="M1 9 Q 7 -3 12 9 T 23 9 T 34 9 T 45 9" fill="none" stroke="#d9141a" stroke-width="2.5"/></svg>LFO 1 · 1/4</div>
+          <div class="lfo"><svg viewBox="0 0 46 18"><path d="M1 16 L 12 2 L 23 16 L 34 2 L 45 16" fill="none" stroke="#d9141a" stroke-width="2.5"/></svg>LFO 2 · 1 bar</div>
+          <div class="lfo"><svg viewBox="0 0 46 18"><path d="M1 16 V 2 H 12 V 16 H 23 V 2 H 34 V 16 H 45" fill="none" stroke="#d9141a" stroke-width="2.5"/></svg>LFO 3 · 1/8</div>
+        </div>
+        <div class="slots" id="slots"></div>
+        <p class="note">Try it: drag the slots to reorder, click one to switch it on or off.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="free">
+    <div class="free">
+      <div>
+        <div class="head" style="margin-bottom:18px"><h2>Free <span class="r">pack</span></h2></div>
+        <p><strong>One installer, every plugin.</strong> The "71 Audio By Matt Tosi Bundle" installs all 12 plugins at once: Phone Bass, Vampire, FilterVerb, Riser, Destructor, Stutter, Crash Delay, Trap Trasher, Cut Destroy, Cut Destroy Halloween, ReversVerb and 71 Rack. Each one appears on its own in your DAW. Free, no time limit, no catch. For Mac and Windows.</p>
+        <div class="specs mini">
+          <div class="spec"><small>MAC</small><strong>VST3 · AU</strong><span>macOS 10.15+, Apple Silicon &amp; Intel</span></div>
+          <div class="spec"><small>WINDOWS</small><strong>VST3</strong><span>Windows 10 &amp; 11, 64-bit</span></div>
+        </div>
+        <p class="note2">The installers are not signed yet. On Mac, right-click the installer and choose Open. On Windows, click More info, then Run anyway.</p>
+      </div>
+      <form class="gate" id="gate" name="free-pack" method="POST" novalidate>
+        <input type="hidden" name="form-name" value="free-pack">
+        <p hidden><label>Leave this empty <input name="bot-field"></label></p>
+        <div class="step" id="s1">
+          <span class="num">1</span>
+          <div>
+            <label for="email">Your email</label>
+            <p class="sub">We send the download link and news about new plugins. Nothing else.</p>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+            <p class="err" id="err" hidden>Enter a valid email address, like name@example.com.</p>
+          </div>
+        </div>
+        <div class="step" id="s2">
+          <span class="num">2</span>
+          <div>
+            <label>Follow 71 Audio on Instagram</label>
+            <p class="sub">New monsters get drawn there first.</p>
+            <a class="btn insta" id="follow" href="#" target="_blank" rel="noopener">Follow <span class="ig-brand"></span></a>
+            <label class="chk"><input type="checkbox" id="followed" name="follows-71audio" value="yes"> I follow 71 Audio</label>
+          </div>
+        </div>
+        <button class="btn red big" id="go" type="submit" disabled>Get all 12 plugins</button>
+        <div class="done" id="done" hidden>
+          <p>Thanks! Pick your system. Open the "71 Audio By Matt Tosi Bundle" folder: one installer puts all 12 plugins in your DAW.</p>
+          <div class="dls">
+            <a class="btn red" id="dlMac" href="#" target="_blank" rel="noopener">Download for Mac</a>
+            <a class="btn red" id="dlWin" href="#" target="_blank" rel="noopener">Download for Windows</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact">
+      <div>
+        <h2>Who's <span style="color:var(--red)">behind it</span></h2>
+        <p style="margin-top:12px;max-width:48ch">I'm Matt, a producer from Paris. I make these plugins for my own tracks first: if a tool makes a session faster or weirder, it ends up here. Bug reports, ideas or a monster you want drawn next, write to me.</p>
+        <div class="links">
+          <a class="btn insta" id="igProducer" href="#" target="_blank" rel="noopener">My music on Instagram</a>
+          <a class="btn" id="igBrand2" href="#" target="_blank" rel="noopener">71 Audio on Instagram</a>
+        </div>
+        <div class="mail">
+          <code id="mail">contact@71audio.com</code>
+          <button type="button" id="copy">Copy</button>
+        </div>
+      </div>
+      <p class="sig">“Every plugin here started on paper. If a drawing makes me laugh, it becomes a plugin.”<br><span style="color:var(--ink-soft);font-size:.8em">Matt Tosi, producer &amp; founder</span></p>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 71 Audio SAS, Paris</span>
+    <span>Made with pencils and C++</span>
+  </footer>
+</div>
+
+<script>
+(function () {
+  /* ===== EDIT THESE ===== */
+  var CONFIG = {
+    brandInstagram: "71audio",          /* 71 Audio Instagram handle, without @ */
+    producerInstagram: "matthieu_tosi", /* Matt's producer Instagram handle, without @ */
+    macUrl: "https://www.dropbox.com/scl/fo/laitpg29bu4yken7jb80c/AC9wfDJU6z6P_lcv6gbjKV8?rlkey=n65o7ekyufus6euli4wea71x1&dl=0",     /* link to the Mac installer zip */
+    winUrl: "https://www.dropbox.com/scl/fo/laitpg29bu4yken7jb80c/AC9wfDJU6z6P_lcv6gbjKV8?rlkey=n65o7ekyufus6euli4wea71x1&dl=0", /* link to the Windows installer */
+    saveEmails: true                    /* emails are stored in Supabase (table site_emails) */
+  };
+  /* ====================== */
+  function ig(h) { return "https://www.instagram.com/" + h + "/"; }
+  ["follow", "igBrand2"].forEach(function (id) { document.getElementById(id).href = ig(CONFIG.brandInstagram); });
+  document.getElementById("igProducer").href = ig(CONFIG.producerInstagram);
+  document.querySelector(".ig-brand").textContent = "@" + CONFIG.brandInstagram;
+
+  var email = document.getElementById("email"), err = document.getElementById("err"), followed = document.getElementById("followed");
+  var go = document.getElementById("go"), gate = document.getElementById("gate"), clickedFollow = false;
+  function validEmail() { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.value.trim()); }
+  function update() {
+    var a = validEmail(), b = followed.checked;
+    document.getElementById("s1").classList.toggle("ok", a);
+    document.getElementById("s2").classList.toggle("ok", b);
+    go.disabled = !(a && b);
+  }
+  email.addEventListener("input", function () { err.hidden = true; update(); });
+  email.addEventListener("blur", function () { if (email.value && !validEmail()) err.hidden = false; });
+  document.getElementById("follow").addEventListener("click", function () { clickedFollow = true; setTimeout(function () { followed.checked = true; update(); }, 800); });
+  followed.addEventListener("change", update);
+  gate.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!validEmail()) { err.hidden = false; email.focus(); return; }
+    if (!followed.checked) return;
+    /* no duplicates: one spelling per address (trimmed, lower-case), and an
+       address this browser already sent is not sent again (people often come
+       back to re-download) - they go straight to the download links */
+    var addr = email.value.trim().toLowerCase();
+    email.value = addr;
+    var sent = [];
+    try { sent = JSON.parse(localStorage.getItem("71a_sent_emails") || "[]"); } catch (x) {}
+    var already = sent.indexOf(addr) !== -1;
+    if (CONFIG.saveEmails && !already) {
+      try {
+        sent.push(addr);
+        try { localStorage.setItem("71a_sent_emails", JSON.stringify(sent)); } catch (x) {}
+        if (!(gate.elements["bot-field"] && gate.elements["bot-field"].value)) {
+          /* emails go to Supabase (table site_emails, insert-only for visitors) */
+          fetch("https://aimlnwrykpdeupregyfd.supabase.co/rest/v1/site_emails", {
+            method: "POST",
+            headers: {
+              "apikey": "sb_publishable_dSLBuR3HlIAX0rrjlhFzmg_fyeUxxhj",
+              "Content-Type": "application/json",
+              "Prefer": "return=minimal"
+            },
+            body: JSON.stringify({ email: addr })
+          }).catch(function () {});
+        }
+      } catch (x) {}
+    }
+    document.getElementById("dlMac").href = CONFIG.macUrl;
+    document.getElementById("dlWin").href = CONFIG.winUrl;
+    document.getElementById("done").hidden = false;
+    go.hidden = true;
+  });
+  update();
+})();
+
+(function () {
+  var plugins = [
+    { n: "Vampire", t: "Stereo imager", img: "img/Vampire.jpg", d: "Bites the attack of every note and spreads it wide, then lets the sound fall back to the center. The mono sum always stays exactly the dry signal.", c: ["Image stereo 0–200%", "Pitch ±24 cents", "Delay 0–100 ms", "Duration"] },
+    { n: "FilterVerb", t: "Filter + shimmer", img: "img/FilterVerb.jpg", d: "One knob sweeps a resonance-free high-pass or low-pass and fades in a long crystalline shimmer as it goes. Built for build-ups and breakdowns.", c: ["Amount 0–100%", "HP / LP", "Reverb on / off"] },
+    { n: "Riser", t: "Endless riser", img: "img/Riser.jpg", d: "A Shepard-tone riser that climbs forever without ever getting higher. The RISE knob sets how fast it climbs.", c: ["Rise", "Dry / Wet"] },
+    { n: "Destructor", t: "Distortion", img: "img/Destructor.jpg", d: "Folding, tube drive and 2-bit crushing on one knob, plus chorus and an OTT-style squash. Past 70% it stops being polite.", c: ["Destroy 0–100%", "Hard / Soft / Crusher", "Dry / Wet"] },
+    { n: "Stutter", t: "Glitch", img: "img/Stutter.jpg", d: "Tempo-locked random stutters with random hard panning. Turn it from rare hiccups to full chaos.", c: ["Amount: off → chaos", "Size 1/4 to 1/64 or random", "Pitch +12", "Dry / Wet"] },
+    { n: "Crash Delay", t: "Dirty delay", img: "img/CrashDelay.jpg", d: "A ping-pong delay that ducks under your vocal and gets dirtier with every repeat, with saturation and filters inside the loop and an automatic 1/32 stutter.", c: ["Time 1/2 to 1/32", "Repeats 1–16", "Mix"] },
+    { n: "Trap Trasher", t: "Music bus trasher", img: "img/TrapTrasher.jpg", d: "Put it on the music bus: every 808 hit slams the rest of the mix down in time with its wave, with dirty saturation on the bass. One TRASH knob does it all.", c: ["Trash 0–100%", "Dry / Wet", "Low cut", "Destroy · Duck · LFO"] },
+    { n: "Cut Destroy", t: "Random cuts", img: "img/CutDestroy.jpg", d: "Random cuts, gates, repeats and effects locked to the song's tempo. The same bar always gets the same edits, so it stays musical.", c: ["Random 0–100%", "Dry / Wet"] },
+    { n: "Cut Destroy Halloween", t: "Random cuts", img: "img/CutDestroyHalloween.jpg", d: "Cut Destroy in its Halloween costume: same tempo-locked chaos, with bats, a spider and eyes that fill with red as you push RANDOM.", c: ["Random 0–100%", "Dry / Wet"] },
+    { n: "ReversVerb", t: "Reverse reverb", img: "img/ReversVerb.jpg", d: "Play your vocal, hit STOP: it makes the reverse reverb of the first syllable of the last phrase, landing right on the voice. Preview it in the plugin, then drag it into your session.", c: ["Crash", "Cut 1/4–1/32", "Stereo", "Reverb tail", "Crash delay"] },
+  ];
+  var grid = document.getElementById("grid");
+  grid.innerHTML = plugins.map(function (p) {
+    return '<article class="card"><figure><img src="' + p.img + '" alt="' + p.n + ' plugin interface, hand-drawn" loading="lazy" width="900" height="450"></figure>' +
+      '<div class="top"><h3>' + p.n + '</h3><span class="tag">' + p.t + '</span></div>' +
+      '<p>' + p.d + '</p><ul class="ctrls">' + p.c.map(function (c) { return "<li>" + c + "</li>"; }).join("") + "</ul></article>";
+  }).join("");
+
+  /* ---- hero knob ---- */
+  var cx = 120, cy = 118, R = 92, A0 = -135, A1 = 135;
+  function pt(a, r) { var t = (a - 90) * Math.PI / 180; return [cx + r * Math.cos(t), cy + r * Math.sin(t)]; }
+  function arcPath(a0, a1) {
+    var p0 = pt(a0, R), p1 = pt(a1, R), large = (a1 - a0) > 180 ? 1 : 0;
+    return "M" + p0[0].toFixed(1) + " " + p0[1].toFixed(1) + " A" + R + " " + R + " 0 " + large + " 1 " + p1[0].toFixed(1) + " " + p1[1].toFixed(1);
+  }
+  var ticks = document.getElementById("ticks"), html = "";
+  for (var i = 0; i <= 10; i++) {
+    var a = A0 + (A1 - A0) * i / 10, p0 = pt(a, 80), p1 = pt(a, 84 + (i % 5 === 0 ? 14 : 7));
+    html += '<line x1="' + p0[0].toFixed(1) + '" y1="' + p0[1].toFixed(1) + '" x2="' + p1[0].toFixed(1) + '" y2="' + p1[1].toFixed(1) + '"/>';
+  }
+  ticks.innerHTML = html;
+  document.getElementById("arcbg").setAttribute("d", arcPath(A0, A1));
+
+  var title = document.getElementById("title");
+  var text = title.textContent; title.textContent = "";
+  var letters = [];
+  /* letters are grouped per word so the title only breaks at the space */
+  text.split(" ").forEach(function (word, w) {
+    if (w) title.appendChild(document.createTextNode(" "));
+    var wd = document.createElement("span");
+    wd.style.whiteSpace = "nowrap";
+    for (var k = 0; k < word.length; k++) {
+      var s = document.createElement("span");
+      s.className = "l"; s.setAttribute("aria-hidden", "true");
+      s.textContent = word[k];
+      wd.appendChild(s); letters.push(s);
+    }
+    title.appendChild(wd);
+  });
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var knob = document.getElementById("knob"), ptr = document.getElementById("ptr"), arc = document.getElementById("arc"), read = document.getElementById("read");
+  var val = 20;
+  function shake() {
+    var amt = Math.max(0, (val - 15) / 85);
+    letters.forEach(function (l, i) {
+      if (amt <= 0) { l.style.transform = ""; return; }
+      var j = reduce ? Math.sin(i * 2.3) : (Math.random() * 2 - 1);
+      var j2 = reduce ? Math.cos(i * 1.7) : (Math.random() * 2 - 1);
+      l.style.transform = "translate(" + (j * amt * 6).toFixed(1) + "px," + (j2 * amt * 8).toFixed(1) + "px) rotate(" + (j * amt * 9).toFixed(1) + "deg) scale(" + (1 + amt * .08 * Math.abs(j2)).toFixed(3) + ")";
+    });
+  }
+  function set(v) {
+    val = Math.max(0, Math.min(100, v));
+    var a = A0 + (A1 - A0) * val / 100;
+    ptr.setAttribute("transform", "rotate(" + a + " " + cx + " " + cy + ")");
+    arc.setAttribute("d", val > 0.5 ? arcPath(A0, a) : "");
+    knob.setAttribute("aria-valuenow", Math.round(val));
+    read.textContent = Math.round(val) + "%" + (val > 90 ? " · CHAOS" : val > 70 ? " · not polite" : "");
+    shake();
+  }
+  set(val);
+  if (!reduce) setInterval(function () { if (val > 15) shake(); }, 90);
+
+  var dragY = null, startV = 0;
+  knob.addEventListener("pointerdown", function (e) { dragY = e.clientY; startV = val; knob.setPointerCapture(e.pointerId); e.preventDefault(); });
+  knob.addEventListener("pointermove", function (e) { if (dragY !== null) set(startV + (dragY - e.clientY) * 0.6); });
+  ["pointerup", "pointercancel"].forEach(function (ev) { knob.addEventListener(ev, function () { dragY = null; }); });
+  knob.addEventListener("wheel", function (e) { e.preventDefault(); set(val - Math.sign(e.deltaY) * 4); }, { passive: false });
+  knob.addEventListener("dblclick", function () { set(20); });
+  knob.addEventListener("keydown", function (e) {
+    var step = e.shiftKey ? 10 : 2;
+    if (e.key === "ArrowUp" || e.key === "ArrowRight") { set(val + step); e.preventDefault(); }
+    if (e.key === "ArrowDown" || e.key === "ArrowLeft") { set(val - step); e.preventDefault(); }
+    if (e.key === "Home") { set(0); e.preventDefault(); }
+    if (e.key === "End") { set(100); e.preventDefault(); }
+  });
+
+  /* ---- rack slots ---- */
+  var order = ["Vampire", "FilterVerb", "Destructor", "Stutter", "Crash Delay", "Riser"];
+  var on = { "Vampire": true, "Destructor": true, "Crash Delay": true };
+  var slots = document.getElementById("slots"), dragName = null;
+  function renderSlots() {
+    slots.innerHTML = "";
+    order.forEach(function (n) {
+      var d = document.createElement("div");
+      d.className = "slot" + (on[n] ? " on" : "");
+      d.draggable = true; d.tabIndex = 0; d.setAttribute("role", "button");
+      d.setAttribute("aria-pressed", on[n] ? "true" : "false");
+      d.innerHTML = "<span>" + n + "</span><i class='pw' aria-hidden='true'></i>";
+      d.addEventListener("click", function () { on[n] = !on[n]; renderSlots(); });
+      d.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); on[n] = !on[n]; renderSlots(); } });
+      d.addEventListener("dragstart", function (e) { dragName = n; d.classList.add("dragging"); try { e.dataTransfer.setData("text/plain", n); } catch (x) {} });
+      d.addEventListener("dragend", function () { dragName = null; renderSlots(); });
+      d.addEventListener("dragover", function (e) { e.preventDefault(); d.classList.add("over"); });
+      d.addEventListener("dragleave", function () { d.classList.remove("over"); });
+      d.addEventListener("drop", function (e) {
+        e.preventDefault();
+        if (!dragName || dragName === n) return;
+        var from = order.indexOf(dragName), to = order.indexOf(n);
+        order.splice(from, 1); order.splice(to, 0, dragName); dragName = null; renderSlots();
+      });
+      slots.appendChild(d);
+    });
+  }
+  renderSlots();
+
+  /* ---- copy email ---- */
+  var btn = document.getElementById("copy"), mail = document.getElementById("mail");
+  btn.addEventListener("click", function () {
+    function selectIt() { var r = document.createRange(); r.selectNodeContents(mail); var s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = "Selected, press ⌘C"; }
+    try {
+      navigator.clipboard.writeText(mail.textContent).then(function () { btn.textContent = "Copied"; setTimeout(function () { btn.textContent = "Copy"; }, 1600); }, selectIt);
+    } catch (e) { selectIt(); }
+  });
+})();
+</script>
+
+</html>
