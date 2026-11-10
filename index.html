@@ -258,28 +258,97 @@ footer { border-top: 2px solid var(--ink); padding-block: 22px 40px; display: fl
 .links { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 22px; }
 @media (max-width: 860px) { .free { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 480px) { .specs.mini { grid-template-columns: minmax(0, 1fr); } .specs.mini .spec { border-right: 0; } .gate { padding: 18px; } }
+
+/* ---- The App (maquette) ---- */
+#app .apphead { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 46px; align-items: center; }
+#app .kicker { font: 400 22px/1.2 var(--f-hand); color: var(--red); }
+#app h2 { font: 400 clamp(48px, 7vw, 86px)/.95 var(--f-drip); margin-block: 6px 16px; }
+#app h2 .r { color: var(--red); }
+#app .big { font-size: 20px; max-width: 40ch; }
+.laptop { position: relative; transform: rotate(1.2deg); }
+.laptop .screen { border: 3.5px solid var(--ink); border-radius: 14px 16px 10px 12px; background: #0c0c0e; padding: 10px; box-shadow: 8px 8px 0 var(--ink); }
+.laptop .base { height: 16px; margin: 0 -26px; border: 3.5px solid var(--ink); border-top: 0; border-radius: 0 0 22px 26px; background: var(--paper-deep); }
+.mini { display: grid; grid-template-columns: 22% 1fr 24%; gap: 8px; aspect-ratio: 16 / 10; }
+.mini .side { background: #0a0a0b; border-right: 1px solid #222; display: flex; flex-direction: column; gap: 6px; padding: 6px; }
+.mini .side i { display: block; height: 7px; border-radius: 2px; background: #26262b; }
+.mini .side i.on { background: #3a3a42; }
+.mini .side img { margin-top: auto; width: 100%; border-radius: 2px; }
+.mini .main { display: flex; flex-direction: column; gap: 7px; padding-top: 4px; overflow: hidden; }
+.mini .ban { flex: none; height: 30%; border-radius: 3px; background: url(img/Destructor.jpg) center / cover; position: relative; }
+.mini .ban b { position: absolute; left: 8px; bottom: 6px; font: 400 13px/1 var(--f-drip); color: #fff; text-shadow: 0 1px 4px #000; }
+.mini .lab { font: 400 9px/1 var(--f-hand); color: #ddd; letter-spacing: .04em; }
+.mini .row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; }
+.mini .row img { width: 100%; aspect-ratio: 2 / 1; object-fit: cover; border-radius: 2px; display: block; }
+.mini .right { display: flex; flex-direction: column; gap: 6px; padding-top: 4px; }
+.mini .vid { flex: 1.3; border-radius: 3px; background: linear-gradient(180deg, #2a2420, #111); position: relative; }
+.mini .vid::after { content: "▶"; position: absolute; inset: 0; display: grid; place-items: center; color: #fff; font-size: 14px; opacity: .8; }
+.mini .chat { flex: 1; border-radius: 3px; background: #151518; padding: 5px; display: flex; flex-direction: column; gap: 4px; }
+.mini .chat i { height: 5px; border-radius: 2px; background: #2c2c33; }
+.mini .chat i:nth-child(2) { width: 70%; } .mini .chat i:nth-child(3) { width: 85%; background: #4a2734; }
+.laptop .tag { position: absolute; top: -18px; right: -10px; font: 400 20px/1 var(--f-hand); background: var(--red); color: var(--paper); border: 2.5px solid var(--ink); border-radius: var(--wobble); padding: 8px 12px 6px; transform: rotate(5deg); }
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; margin-top: 54px; }
+.step3 { border: 3px solid var(--ink); border-radius: var(--wobble); padding: 20px 20px 18px; background: var(--paper); position: relative; }
+.step3:nth-child(1) { transform: rotate(-.8deg); } .step3:nth-child(3) { transform: rotate(.7deg); }
+.step3 .n { font: 400 64px/.8 var(--f-drip); color: var(--red); }
+.step3 h3 { font: 400 28px/1.05 var(--f-hand); margin: 8px 0 6px; }
+.step3 p { margin: 0; color: var(--ink-soft); }
+.dl { margin-top: 40px; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
+.dl .btn.big { font-size: 26px; padding: 18px 30px 14px; }
+.dl .alt { font: 400 19px/1.2 var(--f-hand); color: var(--ink-soft); }
+.dl .alt a { color: var(--ink); }
+.phone { display: none; margin-top: 40px; border: 3px dashed var(--ink); border-radius: var(--wobble-2); padding: 22px; text-align: center; }
+.phone h3 { font: 400 30px/1.1 var(--f-hand); color: var(--red); margin-bottom: 8px; }
+.phone form { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 14px; }
+.phone input { font: 400 17px/1.2 var(--f-body); padding: 12px 14px; border: 2.5px solid var(--ink); border-radius: 10px; background: #fbf7ee; min-width: 240px; }
+body.is-phone .dl { display: none; } body.is-phone .phone { display: block; }
+.why { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; margin-top: 56px; }
+.why > div { display: grid; grid-template-columns: 30px 1fr; gap: 8px; }
+.why span { font: 400 26px/1 var(--f-hand); color: var(--red); }
+.why b { font: 400 22px/1.1 var(--f-hand); display: block; margin-bottom: 4px; }
+.why p { margin: 0; font-size: 15px; color: var(--ink-soft); }
+.faq { margin-top: 50px; display: grid; gap: 10px; max-width: 760px; }
+.faq details { border: 2.5px solid var(--ink); border-radius: var(--wobble); padding: 12px 16px 10px; background: var(--paper); }
+.faq summary { font: 400 23px/1.2 var(--f-hand); cursor: pointer; list-style: none; }
+.faq summary::before { content: "+ "; color: var(--red); }
+.faq details[open] summary::before { content: "– "; }
+.faq p { margin: 8px 0 2px; color: var(--ink-soft); }
+@media (max-width: 860px) { #app .apphead, .steps, .why { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 1000px) and (min-width: 861px) { .why { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* ---- Langues : drapeaux en haut à droite ---- */
+.nav { flex-wrap: wrap; }
+.langs { display: flex; gap: 8px; }
+.langs button { width: 40px; height: 28px; padding: 0; border: 2px solid var(--ink); border-radius: 6px; overflow: hidden; background: none; cursor: pointer; opacity: .45; transition: transform .15s, opacity .15s; }
+.langs button:hover { opacity: 1; transform: rotate(-3deg); }
+.langs button[aria-pressed="true"] { opacity: 1; box-shadow: 3px 3px 0 var(--red); }
+.langs svg { display: block; width: 100%; height: 100%; }
 </style>
 
 <div class="wrap">
   <nav class="nav" aria-label="Main">
     <a class="logo" href="#top"><b>71</b><span>AUDIO</span></a>
     <ul>
+      <li><a href="#app"><span data-t="navApp">The App</span></a></li>
       <li><a href="#phonebass">Phone Bass</a></li>
       <li><a href="#plugins">Plugins</a></li>
       <li><a href="#rack">71 Rack</a></li>
-      <li><a href="#free">Free download</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <div class="langs" role="group" aria-label="Langue / Language / Idioma">
+      <button type="button" data-lang="fr" title="Français" aria-label="Français"><svg viewBox="0 0 3 2" preserveAspectRatio="none" aria-hidden="true"><rect width="1" height="2" fill="#0055a4"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg></button>
+      <button type="button" data-lang="en" title="English" aria-label="English"><svg viewBox="0 0 60 40" preserveAspectRatio="none" aria-hidden="true"><rect width="60" height="40" fill="#012169"/><path d="M0 0L60 40M60 0L0 40" stroke="#fff" stroke-width="8"/><path d="M0 0L60 40M60 0L0 40" stroke="#c8102e" stroke-width="3"/><path d="M30 0V40M0 20H60" stroke="#fff" stroke-width="13"/><path d="M30 0V40M0 20H60" stroke="#c8102e" stroke-width="8"/></svg></button>
+      <button type="button" data-lang="es" title="Español" aria-label="Español"><svg viewBox="0 0 3 2" preserveAspectRatio="none" aria-hidden="true"><rect width="3" height="2" fill="#c60b1e"/><rect y=".5" width="3" height="1" fill="#ffc400"/></svg></button>
+    </div>
   </nav>
 
   <header class="hero" id="top">
     <div>
-      <p class="eyebrow">Audio plugins drawn by hand in Paris</p>
+      <p class="eyebrow"><span data-t="eyebrow">Audio plugins drawn by hand in Paris</span></p>
       <h1 id="title" aria-label="71 Audio">71 Audio</h1>
-      <p class="lede">71 Audio is a small plugin label started by a music producer who got tired of menus. Every plugin begins as a pencil drawing, gets one big knob, and does one thing loudly. Twelve of them are <em>free</em> right now, in <em>one</em> download, including the new ReversVerb.</p>
+      <p class="lede"><span data-t="lede">71 Audio is a small plugin label started by a music producer who got tired of menus. Every plugin begins as a pencil drawing, gets one big knob, and does one thing loudly. Twelve of them are <em>free</em> right now, all in <em>one</em> app, including the new ReversVerb.</span></p>
       <div class="ctas">
-        <a class="btn red" href="#free">Get all 12 plugins free</a>
-        <a class="btn" href="#plugins">See the plugins</a>
+        <a class="btn red" href="#app"><span data-t="cta12">Get the 12 plugins in the app</span></a>
+        <a class="btn" href="#plugins"><span data-t="seePlugins">See the plugins</span></a>
       </div>
     </div>
     <div class="knobcard">
@@ -295,24 +364,87 @@ footer { border-top: 2px solid var(--ink); padding-block: 22px 40px; display: fl
         <text x="166" y="222" font-family="Gochi Hand, cursive" font-size="20" fill="#161310">100%</text>
       </svg>
       <p class="read" id="read" aria-live="polite">20%</p>
-      <p class="hint">Drag it up. The title above will notice.</p>
+      <p class="hint"><span data-t="knobHint">Drag it up. The title above will notice.</span></p>
     </div>
   </header>
 
+
+  <section id="app">
+    <div class="apphead">
+      <div>
+        <p class="kicker"><span data-t="appKicker">New · Free · Mac &amp; Windows</span></p>
+        <h2><span data-t="appH">All your plugins.<br><span class="r">One app.</span></span></h2>
+        <p class="big"><span data-t="appP">The 71 Audio app installs every plugin, keeps them up to date on its own, and puts you in the room with the community: presets, plugins made by members, the live chat, and me.</span></p>
+      </div>
+      <div class="laptop" aria-hidden="true">
+        <span class="tag"><span data-t="itsFree">It's free</span></span>
+        <div class="screen">
+          <div class="mini">
+            <div class="side"><i class="on"></i><i></i><i></i><i></i><i></i><img src="img/app-skater.jpg" alt=""></div>
+            <div class="main">
+              <div class="ban"><b>DIY · FREE</b></div>
+              <span class="lab">NEW</span>
+              <div class="row"><img src="img/ReversVerb.jpg" alt=""><img src="img/PhoneBass.jpg" alt=""><img src="img/CutDestroy.jpg" alt=""></div>
+              <span class="lab">COLLECTIONS</span>
+              <div class="row"><img src="img/Vampire.jpg" alt=""><img src="img/FilterVerb.jpg" alt=""><img src="img/Riser.jpg" alt=""></div>
+            </div>
+            <div class="right"><div class="vid"></div><div class="chat"><i></i><i></i><i></i><i></i></div></div>
+          </div>
+        </div>
+        <div class="base"></div>
+      </div>
+    </div>
+
+    <div class="steps">
+      <div class="step3"><span class="n">1</span><h3><span data-t="s1h">Download the app</span></h3><p><span data-t="s1p">One click, for Mac or Windows. Free, no time limit.</span></p></div>
+      <div class="step3"><span class="n">2</span><h3><span data-t="s2h">Type your email</span></h3><p><span data-t="s2p">You get a 6-digit code. No password to remember, ever.</span></p></div>
+      <div class="step3"><span class="n">3</span><h3><span data-t="s3h">That's it</span></h3><p><span data-t="s3p">Install every plugin in one place. New ones and updates show up on their own.</span></p></div>
+    </div>
+
+    <div class="dl">
+      <a class="btn red big" id="dlMain" href="https://github.com/thegametuotuo-pixel/71audio-updates/releases/latest/download/71-Audio-App-Mac.dmg"><span data-t="dlMac">Download for Mac</span></a>
+      <p class="alt" id="dlAlt"><span data-t="onPc">On a PC? </span><a href="https://github.com/thegametuotuo-pixel/71audio-updates/releases/latest/download/71-Audio-App-Windows-setup.exe"><span data-t="dlWin">Download for Windows</span></a></p>
+    </div>
+
+    <div class="phone">
+      <h3><span data-t="phoneH">You're on your phone 📱</span></h3>
+      <p><span data-t="phoneP">The app runs on a computer. Leave your email and I'll send you the link, so it's waiting for you tonight in the studio.</span></p>
+      <form id="phoneForm">
+        <input type="email" name="email" placeholder="you@example.com" required maxlength="200">
+        <input type="text" name="bot-field" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+        <button class="btn red" type="submit"><span data-t="sendLink">Send me the link</span></button>
+      </form>
+    </div>
+
+    <div class="why">
+      <div><span>↻</span><div><b><span data-t="w1h">Always up to date</span></b><p><span data-t="w1p">Plugins and the app update themselves. No more digging for the right installer.</span></p></div></div>
+      <div><span>★</span><div><b><span data-t="w2h">New plugins first</span></b><p><span data-t="w2p">Every new monster lands in the app before anywhere else.</span></p></div></div>
+      <div><span>◯</span><div><b><span data-t="w3h">The community</span></b><p><span data-t="w3p">Presets and plugins shared by members, checked by me before they go live.</span></p></div></div>
+      <div><span>✦</span><div><b><span data-t="w4h">Straight from me</span></b><p><span data-t="w4p">The live chat, my videos, and what's coming next.</span></p></div></div>
+    </div>
+
+    <div class="faq">
+      <details><summary><span data-t="f1q">Is it really free?</span></summary><p><span data-t="f1a">Yes. The app and every plugin are free, forever. No subscription, no trial.</span></p></details>
+      <details><summary><span data-t="f2q">Do I need an account?</span></summary><p><span data-t="f2a">Just your email. You get a code to sign in, no password.</span></p></details>
+      <details><summary><span data-t="f3q">Can I get the plugins without the app?</span></summary><p><span data-t="f3a">No: the app is now the only way to get them. It's free, it only takes your email, and it keeps every plugin up to date for you.</span></p></details>
+      <details><summary><span data-t="f4q">Mac or Windows?</span></summary><p><span data-t="f4a">Both. On Mac, the app is signed and checked by Apple, so it opens like any other app.</span></p></details>
+    </div>
+  </section>
+
   <section id="phonebass">
     <div class="feat">
-      <figure><img src="img/PhoneBass.jpg" alt="Phone Bass plugin interface, hand-drawn" width="900" height="450"><span class="stamp">New · Free</span></figure>
+      <figure><img src="img/PhoneBass.jpg" alt="Phone Bass plugin interface, hand-drawn" width="900" height="450"><span class="stamp"><span data-t="newFree">New · Free</span></span></figure>
       <div>
-        <p class="kicker">The one everybody asked for</p>
+        <p class="kicker"><span data-t="pbKicker">The one everybody asked for</span></p>
         <h2>Phone Bass</h2>
-        <p class="big">Your 808 sounds huge in the studio and disappears on a phone. Phone Bass fixes that with one knob: it adds the harmonics a tiny speaker can play, so your sub is heard everywhere.</p>
+        <p class="big"><span data-t="pbP">Your 808 sounds huge in the studio and disappears on a phone. Phone Bass fixes that with one knob: it adds the harmonics a tiny speaker can play, so your sub is heard everywhere.</span></p>
         <ul class="pts">
-          <li><span>◯</span><p>One knob. Turn it up until the bass shows up on a phone.</p></li>
-          <li><span>☎</span><p>PHONE TEST button: hear your mix through a phone speaker, then flip BYPASS to compare.</p></li>
-          <li><span>✓</span><p>Your original sub is never touched, and it never clips.</p></li>
+          <li><span>◯</span><p><span data-t="pb1">One knob. Turn it up until the bass shows up on a phone.</span></p></li>
+          <li><span>☎</span><p><span data-t="pb2">PHONE TEST button: hear your mix through a phone speaker, then flip BYPASS to compare.</span></p></li>
+          <li><span>✓</span><p><span data-t="pb3">Your original sub is never touched, and it never clips.</span></p></li>
         </ul>
         <div class="ctas">
-          <a class="btn red" href="#free">Get Phone Bass free</a>
+          <a class="btn red" href="#app"><span data-t="pbCta">Get Phone Bass in the app</span></a>
         </div>
       </div>
     </div>
@@ -320,8 +452,8 @@ footer { border-top: 2px solid var(--ink); padding-block: 22px 40px; display: fl
 
   <section id="plugins">
     <div class="head">
-      <h2>The 71 <span class="r">Series</span></h2>
-      <p>Each plugin started as a pencil drawing, and the drawing is the interface. One knob does the damage and a DRY/WET knob reins it in. <strong>One free download installs all of them</strong>, each one as its own plugin in your DAW.</p>
+      <h2><span data-t="serH">The 71 <span class="r">Series</span></span></h2>
+      <p><span data-t="serP">Each plugin started as a pencil drawing, and the drawing is the interface. One knob does the damage and a DRY/WET knob reins it in. <strong>The free app installs all of them</strong>, each one as its own plugin in your DAW.</span></p>
     </div>
     <div class="grid" id="grid"></div>
   </section>
@@ -330,13 +462,13 @@ footer { border-top: 2px solid var(--ink); padding-block: 22px 40px; display: fl
     <div class="rack">
       <div>
         <div class="head" style="margin-bottom:18px"><h2>71 <span class="r">Rack</span></h2></div>
-        <h3>The monsters in one chain.</h3>
-        <p class="note2" style="margin:0 0 12px">71 Rack is just one of the 12 plugins in the pack. You don't need it to use the others: every plugin also shows up on its own in your DAW.</p>
-        <p>Drop any module into six slots, reorder them by dragging, and let three tempo-locked LFOs move the knobs for you.</p>
+        <h3><span data-t="rkH3">The monsters in one chain.</span></h3>
+        <p class="note2" style="margin:0 0 12px"><span data-t="rkNote">71 Rack is just one of the 12 plugins in the app. You don't need it to use the others: every plugin also shows up on its own in your DAW.</span></p>
+        <p><span data-t="rkP">Drop any module into six slots, reorder them by dragging, and let three tempo-locked LFOs move the knobs for you.</span></p>
         <ul class="pts">
-          <li><span>~</span><p>Three LFOs synced to the song. Drag an LFO onto any knob, switch or slot mix to assign it.</p></li>
-          <li><span>⇄</span><p>Reorder the chain while it plays. Tails and live state move with the module, with no clicks.</p></li>
-          <li><span>◐</span><p>Every slot has its own power switch and mix knob.</p></li>
+          <li><span>~</span><p><span data-t="rk1">Three LFOs synced to the song. Drag an LFO onto any knob, switch or slot mix to assign it.</span></p></li>
+          <li><span>⇄</span><p><span data-t="rk2">Reorder the chain while it plays. Tails and live state move with the module, with no clicks.</span></p></li>
+          <li><span>◐</span><p><span data-t="rk3">Every slot has its own power switch and mix knob.</span></p></li>
         </ul>
       </div>
       <div class="rackbox">
@@ -346,79 +478,69 @@ footer { border-top: 2px solid var(--ink); padding-block: 22px 40px; display: fl
           <div class="lfo"><svg viewBox="0 0 46 18"><path d="M1 16 V 2 H 12 V 16 H 23 V 2 H 34 V 16 H 45" fill="none" stroke="#d9141a" stroke-width="2.5"/></svg>LFO 3 · 1/8</div>
         </div>
         <div class="slots" id="slots"></div>
-        <p class="note">Try it: drag the slots to reorder, click one to switch it on or off.</p>
+        <p class="note"><span data-t="rkTry">Try it: drag the slots to reorder, click one to switch it on or off.</span></p>
       </div>
     </div>
   </section>
 
-  <section id="free">
-    <div class="free">
-      <div>
-        <div class="head" style="margin-bottom:18px"><h2>Free <span class="r">pack</span></h2></div>
-        <p><strong>One installer, every plugin.</strong> The "71 Audio By Matt Tosi Bundle" installs all 12 plugins at once: Phone Bass, Vampire, FilterVerb, Riser, Destructor, Stutter, Crash Delay, Trap Trasher, Cut Destroy, Cut Destroy Halloween, ReversVerb and 71 Rack. Each one appears on its own in your DAW. Free, no time limit, no catch. For Mac and Windows.</p>
-        <div class="specs mini">
-          <div class="spec"><small>MAC</small><strong>VST3 · AU</strong><span>macOS 10.15+, Apple Silicon &amp; Intel</span></div>
-          <div class="spec"><small>WINDOWS</small><strong>VST3</strong><span>Windows 10 &amp; 11, 64-bit</span></div>
-        </div>
-        <p class="note2">The installers are not signed yet. On Mac, right-click the installer and choose Open. On Windows, click More info, then Run anyway.</p>
-      </div>
-      <form class="gate" id="gate" name="free-pack" method="POST" novalidate>
-        <input type="hidden" name="form-name" value="free-pack">
-        <p hidden><label>Leave this empty <input name="bot-field"></label></p>
-        <div class="step" id="s1">
-          <span class="num">1</span>
-          <div>
-            <label for="email">Your email</label>
-            <p class="sub">We send the download link and news about new plugins. Nothing else.</p>
-            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
-            <p class="err" id="err" hidden>Enter a valid email address, like name@example.com.</p>
-          </div>
-        </div>
-        <div class="step" id="s2">
-          <span class="num">2</span>
-          <div>
-            <label>Follow 71 Audio on Instagram</label>
-            <p class="sub">New monsters get drawn there first.</p>
-            <a class="btn insta" id="follow" href="#" target="_blank" rel="noopener">Follow <span class="ig-brand"></span></a>
-            <label class="chk"><input type="checkbox" id="followed" name="follows-71audio" value="yes"> I follow 71 Audio</label>
-          </div>
-        </div>
-        <button class="btn red big" id="go" type="submit" disabled>Get all 12 plugins</button>
-        <div class="done" id="done" hidden>
-          <p>Thanks! Pick your system. Open the "71 Audio By Matt Tosi Bundle" folder: one installer puts all 12 plugins in your DAW.</p>
-          <div class="dls">
-            <a class="btn red" id="dlMac" href="#" target="_blank" rel="noopener">Download for Mac</a>
-            <a class="btn red" id="dlWin" href="#" target="_blank" rel="noopener">Download for Windows</a>
-          </div>
-        </div>
-      </form>
-    </div>
-  </section>
 
   <section id="contact">
     <div class="contact">
       <div>
-        <h2>Who's <span style="color:var(--red)">behind it</span></h2>
-        <p style="margin-top:12px;max-width:48ch">I'm Matt, a producer from Paris. I make these plugins for my own tracks first: if a tool makes a session faster or weirder, it ends up here. Bug reports, ideas or a monster you want drawn next, write to me.</p>
+        <h2><span data-t="whoH">Who's <span style="color:var(--red)">behind it</span></span></h2>
+        <p style="margin-top:12px;max-width:48ch"><span data-t="whoP">I'm Matt, a producer from Paris. I make these plugins for my own tracks first: if a tool makes a session faster or weirder, it ends up here. Bug reports, ideas or a monster you want drawn next, write to me.</span></p>
         <div class="links">
-          <a class="btn insta" id="igProducer" href="#" target="_blank" rel="noopener">My music on Instagram</a>
-          <a class="btn" id="igBrand2" href="#" target="_blank" rel="noopener">71 Audio on Instagram</a>
+          <a class="btn insta" id="igProducer" href="#" target="_blank" rel="noopener"><span data-t="igMusic">My music on Instagram</span></a>
+          <a class="btn" id="igBrand2" href="#" target="_blank" rel="noopener"><span data-t="igBrand">71 Audio on Instagram</span></a>
         </div>
         <div class="mail">
           <code id="mail">contact@71audio.com</code>
-          <button type="button" id="copy">Copy</button>
+          <button type="button" id="copy" data-t="copy">Copy</button>
         </div>
       </div>
-      <p class="sig">“Every plugin here started on paper. If a drawing makes me laugh, it becomes a plugin.”<br><span style="color:var(--ink-soft);font-size:.8em">Matt Tosi, producer &amp; founder</span></p>
+      <p class="sig"><span data-t="sig">“Every plugin here started on paper. If a drawing makes me laugh, it becomes a plugin.”<br><span style="color:var(--ink-soft);font-size:.8em">Matt Tosi, producer &amp; founder</span></span></p>
     </div>
   </section>
 
   <footer>
     <span>© 2026 71 Audio SAS, Paris</span>
-    <span>Made with pencils and C++</span>
+    <span><span data-t="foot">Made with pencils and C++</span></span>
   </footer>
 </div>
 
+<script>
+/* Langues : la page est écrite en anglais ; au chargement, le français s'affiche par défaut.
+   Les drapeaux changent tout ce qui porte data-t. ?lang=en / ?lang=es pour un lien direct. */
+(function () {
+  var STR = { fr: {"navApp": "L'app", "navFree": "Téléchargement gratuit", "eyebrow": "Des plugins audio dessinés à la main à Paris", "lede": "71 Audio est un petit label de plugins lancé par un producteur qui en avait marre des menus. Chaque plugin commence par un dessin au crayon, reçoit un gros bouton et fait une seule chose, fort. Douze sont <em>gratuits</em> dès maintenant, tous dans <em>une seule</em> app, dont le nouveau ReversVerb.", "cta12": "Les 12 plugins dans l'app", "seePlugins": "Voir les plugins", "knobHint": "Monte-le. Le titre au-dessus va le sentir.", "appKicker": "Nouveau · Gratuit · Mac &amp; Windows", "appH": "Tous tes plugins.<br><span class=\"r\">Une seule app.</span>", "appP": "L'app 71 Audio installe tous les plugins, les met à jour toute seule et te fait entrer dans la communauté : les presets, les plugins créés par les membres, le chat en direct, et moi.", "itsFree": "C'est gratuit", "s1h": "Télécharge l'app", "s1p": "Un clic, pour Mac ou Windows. Gratuit, sans limite de temps.", "s2h": "Tape ton mail", "s2p": "Tu reçois un code à 6 chiffres. Aucun mot de passe à retenir.", "s3h": "C'est tout", "s3p": "Tous les plugins s'installent au même endroit. Les nouveautés et les mises à jour arrivent toutes seules.", "dlMac": "Télécharger pour Mac", "dlWin": "Télécharger pour Windows", "onPc": "Sur PC ? ", "phoneH": "Tu es sur ton téléphone 📱", "phoneP": "L'app tourne sur ordinateur. Laisse ton mail et je t'envoie le lien : il t'attendra ce soir au studio.", "sendLink": "Envoie-moi le lien", "w1h": "Toujours à jour", "w1p": "Les plugins et l'app se mettent à jour tout seuls. Fini de chercher le bon installeur.", "w2h": "Les nouveaux plugins en premier", "w2p": "Chaque nouveau monstre arrive dans l'app avant partout ailleurs.", "w3h": "La communauté", "w3p": "Des presets et des plugins partagés par les membres, vérifiés par moi avant d'être en ligne.", "w4h": "En direct avec moi", "w4p": "Le chat en direct, mes vidéos et tout ce qui arrive.", "f1q": "C'est vraiment gratuit ?", "f1a": "Oui. L'app et tous les plugins sont gratuits, pour toujours. Pas d'abonnement, pas de période d'essai.", "f2q": "Il faut un compte ?", "f2a": "Juste ton mail. Tu reçois un code pour te connecter, sans mot de passe.", "f3q": "Je peux avoir les plugins sans l'app ?", "f3a": "Non : l'app est maintenant le seul moyen de les avoir. Elle est gratuite, il suffit de ton mail, et elle garde tous les plugins à jour pour toi.", "f4q": "Mac ou Windows ?", "f4a": "Les deux. Sur Mac, l'app est signée et vérifiée par Apple : elle s'ouvre comme n'importe quelle app.", "newFree": "Nouveau · Gratuit", "pbKicker": "Celui que tout le monde réclamait", "pbP": "Ton 808 sonne énorme au studio et disparaît sur un téléphone. Phone Bass règle ça avec un seul bouton : il ajoute les harmoniques qu'un petit haut-parleur sait jouer, pour que ton sub s'entende partout.", "pb1": "Un seul bouton. Monte-le jusqu'à ce que la basse apparaisse sur un téléphone.", "pb2": "Bouton PHONE TEST : écoute ton mix comme sur un haut-parleur de téléphone, puis BYPASS pour comparer.", "pb3": "Ton sub d'origine n'est jamais touché, et ça ne sature jamais.", "pbCta": "Phone Bass dans l'app", "serH": "La série <span class=\"r\">71</span>", "serP": "Chaque plugin a commencé par un dessin au crayon, et le dessin est l'interface. Un bouton fait les dégâts, un DRY/WET les dose. <strong>L'app gratuite les installe tous</strong>, chacun comme un plugin à part dans ton logiciel.", "rkH3": "Les monstres dans une seule chaîne.", "rkNote": "71 Rack n'est qu'un des 12 plugins de l'app. Pas besoin de lui pour utiliser les autres : chaque plugin apparaît aussi tout seul dans ton logiciel.", "rkP": "Mets n'importe quel module dans six emplacements, réordonne-les en les glissant, et laisse trois LFO calés sur le tempo bouger les boutons pour toi.", "rk1": "Trois LFO calés sur le morceau. Glisse un LFO sur un bouton, un interrupteur ou le mix d'un emplacement pour l'assigner.", "rk2": "Réordonne la chaîne pendant la lecture. Les queues et l'état suivent le module, sans clic.", "rk3": "Chaque emplacement a son interrupteur et son bouton de mix.", "rkTry": "Essaie : glisse les emplacements pour les réordonner, clique pour allumer ou éteindre.", "frH": "Pack <span class=\"r\">gratuit</span>", "frP": "<strong>Un installeur, tous les plugins.</strong> Le « 71 Audio By Matt Tosi Bundle » installe les 12 plugins d'un coup : Phone Bass, Vampire, FilterVerb, Riser, Destructor, Stutter, Crash Delay, Trap Trasher, Cut Destroy, Cut Destroy Halloween, ReversVerb et 71 Rack. Chacun apparaît tout seul dans ton logiciel. Gratuit, sans limite de temps, sans piège. Pour Mac et Windows.", "frNote": "Les installeurs ne sont pas encore signés. Sur Mac, fais clic droit sur l'installeur puis Ouvrir. Sur Windows, clique sur Informations complémentaires, puis Exécuter quand même.", "yourEmail": "Ton mail", "emailSub": "On t'envoie le lien de téléchargement et les nouvelles des prochains plugins. Rien d'autre.", "emailErr": "Entre une adresse mail valide, comme nom@exemple.com.", "igLabel": "Suis 71 Audio sur Instagram", "igSub": "Les nouveaux monstres y sont dessinés en premier.", "get12": "Recevoir les 12 plugins", "doneP": "Merci ! Choisis ton système. Ouvre le dossier « 71 Audio By Matt Tosi Bundle » : un seul installeur met les 12 plugins dans ton logiciel.", "whoH": "Qui est <span style=\"color:var(--red)\">derrière</span>", "whoP": "Moi c'est Matt, producteur à Paris. Je fais ces plugins d'abord pour mes propres morceaux : si un outil rend une session plus rapide ou plus folle, il finit ici. Un bug, une idée, un monstre que tu veux voir dessiné ? Écris-moi.", "igMusic": "Ma musique sur Instagram", "igBrand": "71 Audio sur Instagram", "sig": "« Chaque plugin ici a commencé sur papier. Si un dessin me fait rire, il devient un plugin. »<br><span style=\"color:var(--ink-soft);font-size:.8em\">Matt Tosi, producteur et fondateur</span>", "foot": "Fait avec des crayons et du C++", "onMac": "Sur Mac ? ", "notPolite": " · plus très poli", "copy": "Copier", "copied": "Copié", "selected": "Sélectionné, fais ⌘C", "sent": "Envoyé ! Regarde tes mails sur ton ordi.", "follow": "Suivre", "iFollow": "Je suis 71 Audio", "title": "71 Audio – Plugins VST3 et AU gratuits dessinés à la main", "altUi": "Interface du plugin {n}, dessinée à la main"}, es: {"navApp": "La app", "navFree": "Descarga gratis", "eyebrow": "Plugins de audio dibujados a mano en París", "lede": "71 Audio es un pequeño sello de plugins creado por un productor harto de los menús. Cada plugin empieza como un dibujo a lápiz, recibe una perilla grande y hace una sola cosa, a lo bestia. Doce son <em>gratis</em> ahora mismo, todos en <em>una sola</em> app, incluido el nuevo ReversVerb.", "cta12": "Los 12 plugins en la app", "seePlugins": "Ver los plugins", "knobHint": "Súbela. El título de arriba lo va a notar.", "appKicker": "Nuevo · Gratis · Mac &amp; Windows", "appH": "Todos tus plugins.<br><span class=\"r\">Una sola app.</span>", "appP": "La app de 71 Audio instala todos los plugins, los actualiza sola y te mete en la comunidad: presets, plugins creados por los miembros, el chat en directo y yo.", "itsFree": "Es gratis", "s1h": "Descarga la app", "s1p": "Un clic, para Mac o Windows. Gratis, sin límite de tiempo.", "s2h": "Escribe tu email", "s2p": "Recibes un código de 6 cifras. Ninguna contraseña que recordar.", "s3h": "Y listo", "s3p": "Todos los plugins en un mismo sitio. Las novedades y las actualizaciones llegan solas.", "dlMac": "Descargar para Mac", "dlWin": "Descargar para Windows", "onPc": "¿En PC? ", "phoneH": "Estás en el móvil 📱", "phoneP": "La app funciona en ordenador. Deja tu email y te mando el enlace: te esperará esta noche en el estudio.", "sendLink": "Envíame el enlace", "w1h": "Siempre al día", "w1p": "Los plugins y la app se actualizan solos. Se acabó buscar el instalador correcto.", "w2h": "Los nuevos plugins primero", "w2p": "Cada nuevo monstruo llega a la app antes que a ningún otro sitio.", "w3h": "La comunidad", "w3p": "Presets y plugins compartidos por los miembros, revisados por mí antes de publicarse.", "w4h": "Directamente conmigo", "w4p": "El chat en directo, mis vídeos y todo lo que viene.", "f1q": "¿De verdad es gratis?", "f1a": "Sí. La app y todos los plugins son gratis, para siempre. Sin suscripción ni periodo de prueba.", "f2q": "¿Necesito una cuenta?", "f2a": "Solo tu email. Recibes un código para entrar, sin contraseña.", "f3q": "¿Puedo tener los plugins sin la app?", "f3a": "No: ahora la app es la única forma de conseguirlos. Es gratis, solo pide tu email y mantiene todos los plugins al día por ti.", "f4q": "¿Mac o Windows?", "f4a": "Los dos. En Mac, la app está firmada y verificada por Apple: se abre como cualquier otra app.", "newFree": "Nuevo · Gratis", "pbKicker": "El que todo el mundo pedía", "pbP": "Tu 808 suena enorme en el estudio y desaparece en un móvil. Phone Bass lo arregla con una sola perilla: añade los armónicos que un altavoz pequeño puede reproducir, para que tu sub se oiga en todas partes.", "pb1": "Una sola perilla. Súbela hasta que el bajo aparezca en un móvil.", "pb2": "Botón PHONE TEST: escucha tu mezcla como en el altavoz de un móvil y luego BYPASS para comparar.", "pb3": "Tu sub original nunca se toca y nunca satura.", "pbCta": "Phone Bass en la app", "serH": "La serie <span class=\"r\">71</span>", "serP": "Cada plugin empezó como un dibujo a lápiz, y el dibujo es la interfaz. Una perilla hace el destrozo y un DRY/WET lo dosifica. <strong>La app gratis los instala todos</strong>, cada uno como su propio plugin en tu DAW.", "rkH3": "Los monstruos en una sola cadena.", "rkNote": "71 Rack es solo uno de los 12 plugins de la app. No lo necesitas para usar los demás: cada plugin aparece también por separado en tu DAW.", "rkP": "Pon cualquier módulo en seis ranuras, reordénalos arrastrando y deja que tres LFO sincronizados al tempo muevan las perillas por ti.", "rk1": "Tres LFO sincronizados con la canción. Arrastra un LFO a cualquier perilla, interruptor o mezcla de ranura para asignarlo.", "rk2": "Reordena la cadena mientras suena. Las colas y el estado se mueven con el módulo, sin clics.", "rk3": "Cada ranura tiene su propio interruptor y perilla de mezcla.", "rkTry": "Pruébalo: arrastra las ranuras para reordenarlas y haz clic para encender o apagar.", "frH": "Pack <span class=\"r\">gratis</span>", "frP": "<strong>Un instalador, todos los plugins.</strong> El «71 Audio By Matt Tosi Bundle» instala los 12 plugins de una vez: Phone Bass, Vampire, FilterVerb, Riser, Destructor, Stutter, Crash Delay, Trap Trasher, Cut Destroy, Cut Destroy Halloween, ReversVerb y 71 Rack. Cada uno aparece por separado en tu DAW. Gratis, sin límite de tiempo, sin trampa. Para Mac y Windows.", "frNote": "Los instaladores aún no están firmados. En Mac, haz clic derecho en el instalador y elige Abrir. En Windows, haz clic en Más información y luego en Ejecutar de todas formas.", "yourEmail": "Tu email", "emailSub": "Te enviamos el enlace de descarga y novedades de los nuevos plugins. Nada más.", "emailErr": "Escribe un email válido, como nombre@ejemplo.com.", "igLabel": "Sigue a 71 Audio en Instagram", "igSub": "Los nuevos monstruos se dibujan allí primero.", "get12": "Recibir los 12 plugins", "doneP": "¡Gracias! Elige tu sistema. Abre la carpeta «71 Audio By Matt Tosi Bundle»: un solo instalador pone los 12 plugins en tu DAW.", "whoH": "Quién está <span style=\"color:var(--red)\">detrás</span>", "whoP": "Soy Matt, productor en París. Hago estos plugins primero para mis propios temas: si una herramienta hace una sesión más rápida o más loca, acaba aquí. ¿Un fallo, una idea, un monstruo que quieres ver dibujado? Escríbeme.", "igMusic": "Mi música en Instagram", "igBrand": "71 Audio en Instagram", "sig": "«Cada plugin empezó en papel. Si un dibujo me hace reír, se convierte en plugin.»<br><span style=\"color:var(--ink-soft);font-size:.8em\">Matt Tosi, productor y fundador</span>", "foot": "Hecho con lápices y C++", "onMac": "¿En Mac? ", "notPolite": " · ya no muy educado", "copy": "Copiar", "copied": "Copiado", "selected": "Seleccionado, pulsa ⌘C", "sent": "¡Enviado! Mira tu correo en el ordenador.", "follow": "Seguir", "iFollow": "Sigo a 71 Audio", "title": "71 Audio – Plugins VST3 y AU gratis dibujados a mano", "altUi": "Interfaz del plugin {n}, dibujada a mano"} }, JSEN = {"onMac": "On a Mac? ", "notPolite": " · not polite", "copy": "Copy", "copied": "Copied", "selected": "Selected, press ⌘C", "sent": "Sent! Check your inbox on your computer.", "follow": "Follow", "iFollow": "I follow 71 Audio", "title": "71 Audio – Free hand-drawn VST3 & AU plugins", "altUi": "{n} plugin interface, hand-drawn"};
+  window.__PLUG = {"fr": {"Vampire": ["Image stéréo", "Mord l'attaque de chaque note et l'écarte en large, puis laisse le son revenir au centre. La somme mono reste toujours exactement le signal d'origine."], "FilterVerb": ["Filtre + shimmer", "Un bouton balaie un passe-haut ou un passe-bas sans résonance et fait monter un long shimmer cristallin. Fait pour les montées et les breaks."], "Riser": ["Montée infinie", "Une montée en son de Shepard qui grimpe pour toujours sans jamais devenir plus aiguë. Le bouton RISE règle la vitesse."], "Destructor": ["Distorsion", "Repliement, saturation à lampe et écrasement 2 bits sur un seul bouton, plus un chorus et une compression façon OTT. Au-delà de 70 %, il n'est plus très poli."], "Stutter": ["Glitch", "Des stutters aléatoires calés sur le tempo, avec des panoramiques extrêmes au hasard. De quelques hoquets au chaos total."], "Crash Delay": ["Delay sale", "Un delay ping-pong qui s'efface sous ta voix et se salit à chaque répétition, avec saturation et filtres dans la boucle et un stutter 1/32 automatique."], "Trap Trasher": ["Trasher de bus musique", "Mets-le sur le bus musique : chaque coup de 808 fait plonger le reste du mix au rythme de sa forme d'onde, avec une saturation sale sur la basse. Un seul bouton TRASH fait tout."], "Cut Destroy": ["Coupes au hasard", "Des coupures, gates, répétitions et effets au hasard, calés sur le tempo du morceau. La même mesure reçoit toujours les mêmes coupes, donc ça reste musical."], "Cut Destroy Halloween": ["Coupes au hasard", "Cut Destroy déguisé pour Halloween : le même chaos calé sur le tempo, avec des chauves-souris, une araignée et des yeux qui se remplissent de rouge quand tu pousses RANDOM."], "ReversVerb": ["Réverbe inversée", "Joue ta voix, fais STOP : il fabrique la réverbe inversée de la première syllabe de la dernière phrase, qui tombe pile sur la voix. Écoute-la dans le plugin, puis glisse-la dans ta session."]}, "es": {"Vampire": ["Imagen estéreo", "Muerde el ataque de cada nota y lo abre, luego deja que el sonido vuelva al centro. La suma mono siempre es exactamente la señal original."], "FilterVerb": ["Filtro + shimmer", "Una perilla barre un paso alto o un paso bajo sin resonancia y va metiendo un largo shimmer cristalino. Hecho para subidas y breaks."], "Riser": ["Subida infinita", "Una subida con tono de Shepard que sube para siempre sin hacerse nunca más aguda. La perilla RISE marca la velocidad."], "Destructor": ["Distorsión", "Plegado, saturación de válvula y bitcrush de 2 bits en una sola perilla, más chorus y una compresión tipo OTT. Pasado el 70 % deja de ser educado."], "Stutter": ["Glitch", "Stutters aleatorios sincronizados al tempo, con paneos extremos al azar. De unos pocos hipos al caos total."], "Crash Delay": ["Delay sucio", "Un delay ping-pong que se aparta bajo tu voz y se ensucia en cada repetición, con saturación y filtros dentro del bucle y un stutter 1/32 automático."], "Trap Trasher": ["Trasher de bus de música", "Ponlo en el bus de música: cada golpe de 808 hunde el resto de la mezcla al ritmo de su onda, con saturación sucia en el bajo. Una sola perilla TRASH lo hace todo."], "Cut Destroy": ["Cortes al azar", "Cortes, gates, repeticiones y efectos al azar, sincronizados al tempo de la canción. El mismo compás recibe siempre los mismos cortes, así que sigue siendo musical."], "Cut Destroy Halloween": ["Cortes al azar", "Cut Destroy disfrazado para Halloween: el mismo caos sincronizado al tempo, con murciélagos, una araña y ojos que se llenan de rojo cuando subes RANDOM."], "ReversVerb": ["Reverb invertida", "Toca tu voz, dale a STOP: crea la reverb invertida de la primera sílaba de la última frase, que cae justo sobre la voz. Escúchala en el plugin y arrástrala a tu sesión."]}};
+  var en = {};
+  /* anglais d'origine, relevé avant toute modification de la page */
+  document.querySelectorAll("[data-t]").forEach(function (el) { var k = el.getAttribute("data-t"); if (!(k in en)) en[k] = el.innerHTML; });
+  for (var j in JSEN) if (!(j in en)) en[j] = JSEN[j];
+  function pick() {
+    var q = (location.search.match(/[?&]lang=(fr|en|es)/) || [])[1]; if (q) return q;
+    try { var m = localStorage.getItem("71a_lang"); if (m === "fr" || m === "en" || m === "es") return m; } catch (e) {}
+    return "fr";
+  }
+  window.__lang = pick();
+  window.__tx = function (k) { return window.__lang === "en" ? (JSEN[k] || en[k] || k) : (STR[window.__lang][k] || JSEN[k] || k); };
+  window.__applyLang = function (l) {
+    window.__lang = l;
+    try { localStorage.setItem("71a_lang", l); } catch (e) {}
+    document.documentElement.lang = l;
+    document.title = window.__tx("title");
+    document.querySelectorAll("[data-t]").forEach(function (el) {
+      var k = el.getAttribute("data-t");
+      if (!(k in en)) en[k] = el.innerHTML;
+      el.innerHTML = l === "en" ? en[k] : (STR[l][k] || en[k]);
+    });
+    document.querySelectorAll(".langs button").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.lang === l)); });
+    if (window.__renderGrid) window.__renderGrid();
+  };
+  document.addEventListener("click", function (e) { var b = e.target.closest(".langs button"); if (b) window.__applyLang(b.dataset.lang); });
+})();
+</script>
 <script>
 (function () {
   /* ===== EDIT THESE ===== */
@@ -431,59 +553,33 @@ footer { border-top: 2px solid var(--ink); padding-block: 22px 40px; display: fl
   };
   /* ====================== */
   function ig(h) { return "https://www.instagram.com/" + h + "/"; }
-  ["follow", "igBrand2"].forEach(function (id) { document.getElementById(id).href = ig(CONFIG.brandInstagram); });
+  document.getElementById("igBrand2").href = ig(CONFIG.brandInstagram);
   document.getElementById("igProducer").href = ig(CONFIG.producerInstagram);
-  document.querySelector(".ig-brand").textContent = "@" + CONFIG.brandInstagram;
 
   var email = document.getElementById("email"), err = document.getElementById("err"), followed = document.getElementById("followed");
-  var go = document.getElementById("go"), gate = document.getElementById("gate"), clickedFollow = false;
-  function validEmail() { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.value.trim()); }
-  function update() {
-    var a = validEmail(), b = followed.checked;
-    document.getElementById("s1").classList.toggle("ok", a);
-    document.getElementById("s2").classList.toggle("ok", b);
-    go.disabled = !(a && b);
-  }
-  email.addEventListener("input", function () { err.hidden = true; update(); });
-  email.addEventListener("blur", function () { if (email.value && !validEmail()) err.hidden = false; });
-  document.getElementById("follow").addEventListener("click", function () { clickedFollow = true; setTimeout(function () { followed.checked = true; update(); }, 800); });
-  followed.addEventListener("change", update);
-  gate.addEventListener("submit", function (e) {
+})();
+
+/* phone: "send me the link" - the address goes to Supabase (table site_emails, insert-only
+   for visitors, same as the old free-pack form), once per address per browser */
+(function () {
+  var f = document.getElementById("phoneForm");
+  if (!f) return;
+  f.addEventListener("submit", function (e) {
     e.preventDefault();
-    if (!validEmail()) { err.hidden = false; email.focus(); return; }
-    if (!followed.checked) return;
-    /* no duplicates: one spelling per address (trimmed, lower-case), and an
-       address this browser already sent is not sent again (people often come
-       back to re-download) - they go straight to the download links */
-    var addr = email.value.trim().toLowerCase();
-    email.value = addr;
+    var addr = f.elements.email.value.trim().toLowerCase();
     var sent = [];
     try { sent = JSON.parse(localStorage.getItem("71a_sent_emails") || "[]"); } catch (x) {}
-    var already = sent.indexOf(addr) !== -1;
-    if (CONFIG.saveEmails && !already) {
-      try {
-        sent.push(addr);
-        try { localStorage.setItem("71a_sent_emails", JSON.stringify(sent)); } catch (x) {}
-        if (!(gate.elements["bot-field"] && gate.elements["bot-field"].value)) {
-          /* emails go to Supabase (table site_emails, insert-only for visitors) */
-          fetch("https://aimlnwrykpdeupregyfd.supabase.co/rest/v1/site_emails", {
-            method: "POST",
-            headers: {
-              "apikey": "sb_publishable_dSLBuR3HlIAX0rrjlhFzmg_fyeUxxhj",
-              "Content-Type": "application/json",
-              "Prefer": "return=minimal"
-            },
-            body: JSON.stringify({ email: addr })
-          }).catch(function () {});
-        }
-      } catch (x) {}
+    if (sent.indexOf(addr) === -1 && !f.elements["bot-field"].value) {
+      sent.push(addr);
+      try { localStorage.setItem("71a_sent_emails", JSON.stringify(sent)); } catch (x) {}
+      fetch("https://aimlnwrykpdeupregyfd.supabase.co/rest/v1/site_emails", {
+        method: "POST",
+        headers: { "apikey": "sb_publishable_dSLBuR3HlIAX0rrjlhFzmg_fyeUxxhj", "Content-Type": "application/json", "Prefer": "return=minimal" },
+        body: JSON.stringify({ email: addr })
+      }).catch(function () {});
     }
-    document.getElementById("dlMac").href = CONFIG.macUrl;
-    document.getElementById("dlWin").href = CONFIG.winUrl;
-    document.getElementById("done").hidden = false;
-    go.hidden = true;
+    f.innerHTML = "<p>" + window.__tx("sent") + "</p>";
   });
-  update();
 })();
 
 (function () {
@@ -500,11 +596,16 @@ footer { border-top: 2px solid var(--ink); padding-block: 22px 40px; display: fl
     { n: "ReversVerb", t: "Reverse reverb", img: "img/ReversVerb.jpg", d: "Play your vocal, hit STOP: it makes the reverse reverb of the first syllable of the last phrase, landing right on the voice. Preview it in the plugin, then drag it into your session.", c: ["Crash", "Cut 1/4–1/32", "Stereo", "Reverb tail", "Crash delay"] },
   ];
   var grid = document.getElementById("grid");
-  grid.innerHTML = plugins.map(function (p) {
-    return '<article class="card"><figure><img src="' + p.img + '" alt="' + p.n + ' plugin interface, hand-drawn" loading="lazy" width="900" height="450"></figure>' +
-      '<div class="top"><h3>' + p.n + '</h3><span class="tag">' + p.t + '</span></div>' +
-      '<p>' + p.d + '</p><ul class="ctrls">' + p.c.map(function (c) { return "<li>" + c + "</li>"; }).join("") + "</ul></article>";
-  }).join("");
+  window.__renderGrid = function () {
+    var tr = window.__PLUG[window.__lang] || {};
+    grid.innerHTML = plugins.map(function (p) {
+      var x = tr[p.n] || [p.t, p.d];
+      return '<article class="card"><figure><img src="' + p.img + '" alt="' + window.__tx("altUi").replace("{n}", p.n) + '" loading="lazy" width="900" height="450"></figure>' +
+        '<div class="top"><h3>' + p.n + '</h3><span class="tag">' + x[0] + '</span></div>' +
+        '<p>' + x[1] + '</p><ul class="ctrls">' + p.c.map(function (c) { return "<li>" + c + "</li>"; }).join("") + "</ul></article>";
+    }).join("");
+  };
+  window.__renderGrid();
 
   /* ---- hero knob ---- */
   var cx = 120, cy = 118, R = 92, A0 = -135, A1 = 135;
@@ -555,7 +656,7 @@ footer { border-top: 2px solid var(--ink); padding-block: 22px 40px; display: fl
     ptr.setAttribute("transform", "rotate(" + a + " " + cx + " " + cy + ")");
     arc.setAttribute("d", val > 0.5 ? arcPath(A0, a) : "");
     knob.setAttribute("aria-valuenow", Math.round(val));
-    read.textContent = Math.round(val) + "%" + (val > 90 ? " · CHAOS" : val > 70 ? " · not polite" : "");
+    read.textContent = Math.round(val) + "%" + (val > 90 ? " · CHAOS" : val > 70 ? window.__tx("notPolite") : "");
     shake();
   }
   set(val);
@@ -607,12 +708,26 @@ footer { border-top: 2px solid var(--ink); padding-block: 22px 40px; display: fl
   /* ---- copy email ---- */
   var btn = document.getElementById("copy"), mail = document.getElementById("mail");
   btn.addEventListener("click", function () {
-    function selectIt() { var r = document.createRange(); r.selectNodeContents(mail); var s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = "Selected, press ⌘C"; }
+    function selectIt() { var r = document.createRange(); r.selectNodeContents(mail); var s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = window.__tx("selected"); }
     try {
-      navigator.clipboard.writeText(mail.textContent).then(function () { btn.textContent = "Copied"; setTimeout(function () { btn.textContent = "Copy"; }, 1600); }, selectIt);
+      navigator.clipboard.writeText(mail.textContent).then(function () { btn.textContent = window.__tx("copied"); setTimeout(function () { btn.textContent = window.__tx("copy"); }, 1600); }, selectIt);
     } catch (e) { selectIt(); }
   });
 })();
 </script>
 
+<script>
+/* Maquette « The App » : bouton adapté à l'ordi du visiteur, formulaire sur téléphone (#phone pour tester). */
+(function () {
+  var ua = navigator.userAgent, phone = /iPhone|Android.+Mobile|iPod/i.test(ua) || location.hash === "#phone";
+  if (phone) document.body.classList.add("is-phone");
+  if (/Windows/i.test(ua)) {
+    var a = document.getElementById("dlMain"), b = document.querySelector("#dlAlt a");
+    var mac = a.href; a.href = b.href; b.href = mac;
+    a.querySelector("[data-t]").setAttribute("data-t", "dlWin"); b.querySelector("[data-t]").setAttribute("data-t", "dlMac");
+    document.querySelector("#dlAlt > [data-t]").setAttribute("data-t", "onMac");
+  }
+  window.__applyLang(window.__lang);
+})();
+</script>
 </html>
