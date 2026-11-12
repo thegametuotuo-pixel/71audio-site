@@ -521,7 +521,9 @@ body.is-phone .dl { display: none; } body.is-phone .phone { display: block; }
   function pick() {
     var q = (location.search.match(/[?&]lang=(fr|en|es)/) || [])[1]; if (q) return q;
     try { var m = localStorage.getItem("71a_lang"); if (m === "fr" || m === "en" || m === "es") return m; } catch (e) {}
-    return "fr";
+    /* première visite : la langue du téléphone / de l'ordi (espagnol -> es, français -> fr, sinon anglais) */
+    var sys = ((navigator.languages && navigator.languages[0]) || navigator.language || "fr").toLowerCase();
+    return sys.indexOf("es") === 0 ? "es" : sys.indexOf("fr") === 0 ? "fr" : "en";
   }
   window.__lang = pick();
   window.__tx = function (k) { return window.__lang === "en" ? (JSEN[k] || en[k] || k) : (STR[window.__lang][k] || JSEN[k] || k); };
