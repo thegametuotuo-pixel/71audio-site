@@ -769,7 +769,10 @@ a.card:hover .get { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(
     fetch("https://aimlnwrykpdeupregyfd.supabase.co/rest/v1/site_emails", {
       method: "POST",
       headers: { "apikey": "sb_publishable_dSLBuR3HlIAX0rrjlhFzmg_fyeUxxhj", "Content-Type": "application/json", "Prefer": "return=minimal" },
-      body: JSON.stringify({ email: addr })
+      // + language, local time zone, ad source (?src=pub-mx) and phone/computer: for the evening reminder (SQL 66) and ad stats
+      body: JSON.stringify({ email: addr, lang: window.__lang, device: document.body.classList.contains("is-phone") ? "phone" : "pc",
+        tz: (function () { try { return (Intl.DateTimeFormat().resolvedOptions().timeZone || "").slice(0, 64) || null; } catch (x) { return null; } })(),
+        src: ((location.search.match(/[?&]src=([a-z0-9-]{1,40})/i) || [])[1] || "").toLowerCase() || null })
     }).then(function (r) {
       show(r.status === 409 ? "already" : "sent");
     }).catch(function () { show("sent"); });
